@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="~/Content/materialize.min.css" />
+    <script src="~/Scripts/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>AGUILAR MP2</title>
+    <style>
+
+        .background-video {
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            z-index: -1; 
+        }
+
+        .transparent-card {
+            background-color: rgba(255, 255, 255, 0.8); 
+            border-radius: 15px; 
+            padding: 20px; 
+            max-height: calc(100vh - 150px); 
+        }
+
+        a {
+            color: #d8c47f;
+        }
+
+        .fontcancel {
+            color: #d8c47f !important;
+        }
+
+    </style>
+    <title>@ViewBag.Title</title>
+</head>
+<body ng-app="RegistrationApplication" ng-controller="RegistrationApplicationController">
+    <div>
+        @RenderBody()
+    </div>
+    <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/AngularScripts/Module.js"></script>
+    <script src="~/Scripts/AngularScripts/Service.js"></script>
+    <script src="~/Scripts/AngularScripts/Controller.js"></script>
+</body>
+</html>
