@@ -7,7 +7,7 @@
     // Function to handle the registration process: validate inputs, store data, and redirect
     $scope.getInputData = function () {
         // Check if all required fields are filled
-        if (!$scope.firstName || !$scope.lastName || !$scope.userEmail || !$scope.userPassword || !$scope.userConfirm || !$scope.userAddress || !$scope.userPhone) {
+        if (!$scope.userEmail || !$scope.userPassword || !$scope.userConfirm || !$scope.username) {
             Swal.fire({
                 icon: 'error',
                 title: 'Missing Information',
@@ -41,14 +41,6 @@
             });
             return;
         }
-
-        /*$scope.getUserDepartment = function () {
-        var getData = RegistrationApplicationITEService.getDepartment();
-        getData.then(function (ReturnedData) {
-            var uDepartment = ReturnedData.data;
-            alert(uDepartment);
-        });
-    } */
 
         // Check if the user already exists in local storage
         var storedUsers = JSON.parse(sessionStorage.getItem('userCredentials')) || [];
