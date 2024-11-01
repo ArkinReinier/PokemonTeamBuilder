@@ -17,6 +17,13 @@
                         <div class="row" ng-init="initFunc()">
                             <form name="RegistrationPage" class="col s12" novalidate>
                                 <div class="row">
+                                    <!-- Username -->
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">email</i>
+                                        <input id="username" type="email" class="validate" ng-model="username" name="username" data-length="20" maxlength="20" required>
+                                        <label for="username">Username</label>
+                                        <span class="helper-text" ng-show="RegistrationPage.userEmail.$touched && RegistrationPage.userEmail.$invalid">This field is required</span>
+                                    </div>
                                     <!-- Email -->
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">email</i>
