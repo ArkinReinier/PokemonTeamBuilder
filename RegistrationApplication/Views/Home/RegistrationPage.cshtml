@@ -17,24 +17,6 @@
                         <div class="row" ng-init="initFunc()">
                             <form name="RegistrationPage" class="col s12" novalidate>
                                 <div class="row">
-                                    <!-- First Name -->
-                                    <div class="input-field col s4 m4 l4">
-                                        <i class="material-icons prefix">account_circle</i>
-                                        <input id="fName" type="text" class="validate" ng-model="firstName" name="firstName" data-length="50" maxlength="50" required >
-                                        <span class="helper-text" ng-show="RegistrationPage.firstName.$touched && RegistrationPage.firstName.$invalid">This field is required</span>
-                                        <label for="fName">First Name</label>
-                                    </div>
-                                    <!-- Middle Name -->
-                                    <div class="input-field col s4 m4 l4">
-                                        <input id="mName" type="text" class="validate" ng-model="middleName" data-length="50" maxlength="50" >
-                                        <label for="mName">Middle Name</label>
-                                    </div>
-                                    <!-- Last Name -->
-                                    <div class="input-field col s4 m4 l4">
-                                        <input id="lName" type="text" class="validate" ng-model="lastName" name="lastName" data-length="50" maxlength="50" required>
-                                        <label for="lName">Last Name</label>
-                                        <span class="helper-text" ng-show="RegistrationPage.lastName.$touched && RegistrationPage.lastName.$invalid">This field is required</span>
-                                    </div>
                                     <!-- Email -->
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">email</i>
@@ -54,20 +36,6 @@
                                         <input id="uPConfirm" type="{{isPasswordVisible ? 'text' : 'password'}}" class="validate" ng-model="userConfirm" name="userConfirm" required>
                                         <label for="uPConfirm">Confirm Password</label>
                                         <span class="helper-text" ng-show="RegistrationPage.userConfirm.$touched && RegistrationPage.userConfirm.$invalid">This field is required</span>
-                                    </div>
-                                    <!-- Address -->
-                                    <div class="input-field col s12 m12 l12">
-                                        <i class="material-icons prefix">location_on</i>
-                                        <input id="uAddress" type="text" class="validate" ng-model="userAddress" name="userAddress" data-length="100" maxlength="100" required>
-                                        <label for="uAddress">Address</label>
-                                        <span class="helper-text" ng-show="RegistrationPage.userAddress.$touched && RegistrationPage.userAddress.$invalid">This field is required</span>
-                                    </div>
-                                    <!-- Phone -->
-                                    <div class="input-field col s12 m12 l12">
-                                        <i class="material-icons prefix">local_phone</i>
-                                        <input id="uPhone" type="text" class="validate" ng-model="userPhone" name="userPhone" data-length="11" maxlength="11" required>
-                                        <label for="uPhone">Phone Number</label>
-                                        <span class="helper-text" ng-show="RegistrationPage.userPhone.$touched && RegistrationPage.userPhone.$invalid">This field is required</span>
                                     </div>
                                 </div>
                                 <!-- Buttons -->
