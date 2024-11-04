@@ -2,49 +2,60 @@
     Layout = "~/Views/Shared/_RegistrationLayout.cshtml";
 }
 
-<!-- Background Video -->
-<video autoplay muted loop class="background-video">
-    <source src="~/Content/Media/Windrise.mp4" type="video/mp4">
-</video>
-
 <div class="row center-align" ng-init="initAlert()">
     <div class="col s12 m6 l4 offset-m3 offset-l4">
         <div class="row">
-            <div class="col s12 m12 l12" style="margin-top: 75px">
-                <div class="card white transparent-card">
+            <div class="col s12 m12 l12" style="margin-top: 42px">
+                <div class="card white transparent-card z-depth-5">
+                    <!-- Z-depth for shadows -->
+                    <!-- Logo Section -->
+                    <div class="center-align" style="margin-top: 9px;">
+                        <img src="~/Content/Media/pokemon_logo.png" alt="Pokémon Logo" class="responsive-img" style="max-height: 80px;">
+                    </div>
+
+                    <!-- Title Section -->
+                    <div class="center-align" style="width: 60%; margin: 0 auto;">
+                        <h2 class="black-text" style="font-size: 24px; margin-top: 10px; margin-bottom: -5px;">Log in to your Pokémon Team Builder account</h2>
+                    </div>
+
                     <div class="card-content white-text">
                         <div class="row" ng-init="initFunc()">
                             <form class="col s12">
                                 <div class="row">
                                     <!-- Username -->
                                     <div class="input-field col s12" id="username-field">
-                                        <i class="material-icons prefix">person</i>
-                                        <input id="username" type="text" class="validate" ng-model="username" required>
-                                        <label for="username">Username (format: firstnamelastname)</label>
+                                        <div class="input-wrapper">
+                                            <input id="username" type="text" class="username-input" placeholder="Username" ng-model="username" required>
+                                        </div>
                                     </div>
-                                    <!-- Password -->
+
+                                    <!-- Password with Visibility Toggle -->
                                     <div class="input-field col s12" id="password-field">
-                                        <i class="material-icons prefix">lock</i>
-                                        <input id="password" type="password" class="validate" ng-model="password" required>
-                                        <label for="password">Password</label>
+                                        <div class="input-wrapper password-wrapper">
+                                            <input id="password" type="password" class="password-input" placeholder="Password" ng-model="password" required>
+                                            <span class="visibility-toggle" id="visibility-icon"></span>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- Buttons -->
-                                <div class="col s12">
-                                    <div class="col s12 m6">
-                                        <a class="waves-effect waves-light btn-large col s12" id="loginbtn" ng-click="login()">
-                                            <i class="material-icons left">send</i>LOGIN
-                                        </a>
-                                    </div>
-                                    <div class="col s12 m6">
-                                        <a class="waves-effect waves-light btn-large col s12 grey darken-4" ng-click="cancelFunc()">
-                                            <i class="material-icons left">cancel</i><b class="fontcancel">CANCEL</b>
-                                        </a>
-                                    </div>
+                                <div class="col s12 m6">
+                                    <a class="waves-effect waves-light btn col s12 button-style" id="loginbtn" ng-click="login()">
+                                        Log In
+                                    </a>
+                                </div>
+                                <div class="col s12 m6">
+                                    <a class="waves-effect waves-light btn col s12 button-style" id="cancelbtn" ng-click="cancelFunc()">
+                                        Cancel
+                                    </a>
                                 </div>
                                 <!-- Link to Registration Page -->
-                                <div class="col s12" style="margin-top: 20px;">
+                                <div class="col s12" style="margin-top: 40px;">
                                     <a href="/Home/RegistrationPage">Don't have an account? Register here.</a>
+                                </div>
+                                <div class="footer-container-top">
+                                    <div class="copyright">
+                                        Pokémon is © of Nintendo, 1995-2024
+                                    </div>
                                 </div>
                             </form>
                         </div>
