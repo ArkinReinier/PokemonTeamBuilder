@@ -146,6 +146,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\materialize.css" />
     <Content Include="Content\materialize.min.css" />
+    <Content Include="Content\Media\pokemon_logo.png" />
     <Content Include="Content\Media\Windrise.mp4" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -198,6 +199,10 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="Content\Fonts\Flexo-Black.ttf" />
+    <Content Include="Content\Fonts\Flexo-Heavy.ttf" />
+    <Content Include="Content\Fonts\Flexo-Bold.ttf" />
+    <Content Include="Content\Fonts\Flexo-Regular.ttf" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />

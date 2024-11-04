@@ -7,8 +7,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>AGUILAR MP2</title>
+    <title>Pokemon Team Builder</title>
     <style>
+
+
 
         .background-video {
             position: fixed; 
@@ -27,13 +29,153 @@
             max-height: calc(100vh - 150px); 
         }
 
-        a {
-            color: #d8c47f;
+        .fontcancel {
+            color: #d8c47f !important;
+        }
+
+/* Everything after this is already used for Pokemon*/
+
+        @@font-face {
+            font-family: 'Flexo-Regular';
+            src: url('/Content/Fonts/Flexo-Regular.ttf');
+        }
+
+        @@font-face {
+            font-family: 'Flexo-Bold';
+            src: url('/Content/Fonts/Flexo-Bold.ttf');
+        }
+
+        @@font-face {
+            font-family: 'Flexo-Heavy';
+            src: url('/Content/Fonts/Flexo-Heavy.ttf');
+        }
+
+
+        h2 {
+            font-family: 'Flexo-Heavy', sans-serif;
+            color: #212529;
+        }
+
+
+        /* Not sure if fontfaces work yet*/
+
+        /* Font family for input labels and text */
+
+
+        .input-field {
+            margin-top: -5px; /* Adjust the value as needed */
+        }
+
+        .input-field input[type="text"],
+        .input-field input[type="password"],
+        .input-field label {
+            font-family: 'Flexo-Regular', sans-serif; /* Custom font for Pokémon feel */
+            color: #FFFFFF;
+        }
+
+        .input-field input[type="text"],
+        .input-field input[type="password"] {
+            padding-left: 11px; /* Adjust padding for icon alignment */
+        }
+
+
+        #loginbtn {
+            font-family: 'Flexo-Bold', sans-serif;
+            background-color: #4dad5b !important; /* Green login button */
+            color: #FFFFFF !important;
+            border-radius: 0.3rem;
+
+        }
+
+        #cancelbtn {
+            font-family: 'Flexo-Bold', sans-serif;
+            background-color: #333 !important; /* Dark color for cancel */
+            color: #FFFFFF !important;
+            border-radius: 0.3rem;
         }
 
         .fontcancel {
             color: #d8c47f !important;
+            font-weight: bold;
         }
+        
+
+        body {
+            background-image: url("https://static.prod.pokemon.com/images/pikachu_pattern.png");
+            background-repeat: repeat;
+        }
+
+        /* Input texboxes */
+
+        /* Container for both input fields */
+        .input-wrapper {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        .username-input,
+        .password-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 16px;
+        }
+
+            .username-input::placeholder,
+            .password-input::placeholder {
+                color: #aaa;
+            }
+
+
+        .visibility-toggle {
+            cursor: pointer;
+            color: #aaa;
+            margin-left: 8px;
+        }
+
+            .visibility-toggle:hover {
+                color: #fff;
+            }
+
+        /* Remove the underline from Materialize input fields */
+        input[type="text"]:not(.browser-default),
+        input[type="password"]:not(.browser-default) {
+            border-bottom: none !important;
+            box-shadow: none !important;
+            width: 100%; /* Ensures input fields fill the container width */
+            padding: 5px 10px; /* Adjust padding to match the first image */
+            margin: 1px 0; /* Space out each input field */
+            box-sizing: border-box; /* Include padding in the total width */
+        }
+
+        /* Remove the focus effect (green line) 
+        input[type="text"]:focus:not(.browser-default),
+        input[type="password"]:focus:not(.browser-default) {
+            border-bottom: none !important;
+            box-shadow: none !important;
+
+        }
+
+        /* Optionally remove focus outline 
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none !important;
+        }
+        */
+
+        .copyright {
+            font-size: 10px;
+            color: #4e4e4e;
+            font-family: "Flexo-Regular", serif;
+            text-align: center;
+            white-space: pre-line;
+            margin: 2px;
+        }
+
 
     </style>
     <title>@ViewBag.Title</title>
