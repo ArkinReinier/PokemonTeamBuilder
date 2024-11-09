@@ -22,11 +22,17 @@
             z-index: -1; 
         }
 
+        .card {
+            border-radius: 15px;
+            padding: 20px;
+        }
+
         .transparent-card {
-            background-color: rgba(255, 255, 255, 0.8); 
-            border-radius: 15px; 
-            padding: 20px; 
-            max-height: calc(100vh - 150px); 
+            background-color: rgba(255, 255, 255, 0.8); /* Add opacity to the background color */
+            border-radius: 15px;
+            padding: 20px;
+            max-height: calc(100vh - 150px);
+            overflow: hidden; /* Prevent content from spilling out */
         }
 
         .fontcancel {
@@ -68,24 +74,28 @@
 
         .input-field input[type="text"],
         .input-field input[type="password"],
+        .input-field input[type="email"],
         .input-field label {
             font-family: 'Flexo-Regular', sans-serif; /* Custom font for Pokémon feel */
             color: #FFFFFF;
         }
 
         .input-field input[type="text"],
-        .input-field input[type="password"] {
+        .input-field input[type="password"],
+        .input-field input[type="email"] {
             padding-left: 11px; /* Adjust padding for icon alignment */
         }
 
 
-        #loginbtn {
+        #loginbtn,
+        #submitbtn {
             font-family: 'Flexo-Bold', sans-serif;
             background-color: #4dad5b !important; /* Green login button */
             color: #FFFFFF !important;
             border-radius: 0.3rem;
-
         }
+
+        
 
         #cancelbtn {
             font-family: 'Flexo-Bold', sans-serif;
@@ -98,7 +108,6 @@
             color: #d8c47f !important;
             font-weight: bold;
         }
-        
 
         body {
             background-image: url("https://static.prod.pokemon.com/images/pikachu_pattern.png");
@@ -116,7 +125,8 @@
         }
 
         .username-input,
-        .password-input {
+        .password-input,
+        .email-input {
             flex: 1;
             background: transparent;
             border: none;
@@ -125,11 +135,11 @@
             font-size: 16px;
         }
 
-            .username-input::placeholder,
-            .password-input::placeholder {
-                color: #aaa;
-            }
-
+        .username-input::placeholder,
+        .password-input::placeholder,
+        .email-input::placeholder {
+            color: #aaa;
+        }
 
         .visibility-toggle {
             cursor: pointer;
@@ -137,13 +147,14 @@
             margin-left: 8px;
         }
 
-            .visibility-toggle:hover {
-                color: #fff;
-            }
+        .visibility-toggle:hover {
+            color: #fff;
+        }
 
         /* Remove the underline from Materialize input fields */
         input[type="text"]:not(.browser-default),
-        input[type="password"]:not(.browser-default) {
+        input[type="password"]:not(.browser-default),
+        input[type="email"]:not(.browser-default) {
             border-bottom: none !important;
             box-shadow: none !important;
             width: 100%; /* Ensures input fields fill the container width */
@@ -176,6 +187,102 @@
             margin: 2px;
         }
 
+        .input-field
+        .helper-text {
+            position: relative;
+            min-height: 18px;
+            margin-right: 12px;
+            display: block;
+            font-size: 14px;
+            color: #dc3545;
+        }
+            /* Team Builder Styles*/
+
+        .party-slot, .box-slot {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 5px;
+            text-align: center;
+        }
+
+        .pokemon-name, 
+        .pokemon-level {
+            font-family: 'Flexo-Regular', sans-serif;
+            color: #333;
+            margin: 0;
+        }
+
+        .move-slot {
+            font-family: 'Flexo-Regular', sans-serif;
+            padding: 5px;
+            margin: 4px 0;
+            text-align: center;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .card.transparent-card {
+            max-height: calc(100vh - 150px);
+            z-index: auto;
+        }
+
+        .medium-container, .pokemon-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 150px;
+            height: 7vh; /* Adjusted height to match container purpose */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .pokemon-container {
+            display: flex;
+            flex-direction: row; /* Align image and text in a row */
+            align-items: center; /* Center the image and text vertically */
+            height: 12vh; /* Maintain the taller height for individual slots */
+            margin-top: -5px; /* Adjust spacing as needed */
+            width: 100%; /* Set width to 100% to be responsive */
+            max-width: 400px; /* Ensure they share the same maximum width */
+        }
+
+        .party-img {
+            margin-right: 50px;
+            
+        }
+
+        .medium-container {
+            width: 93%; /* Set width to 100% to be responsive */
+            max-width: 400px; /* Ensure they share the same maximum width */
+            margin-bottom: 25px;
+        }
+
+        .container-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center both containers horizontally */
+        }
+
+        .pokemon-slot {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 40px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .medium-container-text {
+            font-family: 'Flexo-Bold', sans-serif;
+            font-size: 25px;
+            color: #333;
+            margin: 0;
+        }
+
+
+            
 
     </style>
     <title>@ViewBag.Title</title>

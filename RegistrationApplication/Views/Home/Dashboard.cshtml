@@ -2,22 +2,82 @@
     Layout = "~/Views/Shared/_RegistrationLayout.cshtml";
 }
 
-<!-- Background Video -->
-<video autoplay muted loop class="background-video">
-    <source src="~/Content/Media/Windrise.mp4" type="video/mp4">
-</video>
+@* Notes for back-end devs: Kindly change this filename to "TeamBuilder.cshtml" and reflect changes in the controller, service, etc. thanks :3 *@
 
 <div class="container">
-    <div class="row center-align">
-        <div class="col s12 m6 l4 offset-m3 offset-l4">
-            <div class="row">
-                <div class="col s12 m12 l12" style="margin-top: 75px">
-                    <div class="card white transparent-card">
-                        <div class="card-content black-text" style="padding-bottom: 50px;">
-                            <h3 style="margin-top: -20px;">Welcome to the Dashboard</h3>
-                            <p>You are successfully logged in.</p>
-                            <a href="/Home/RegistrationPage" class="waves-effect waves-light btn-small col s12 grey darken-4" style="margin-top: 15px"><b>Logout</b></a>
+    <!-- Party Section -->
+    <div class="row">
+        <div class="col s12 m6 l4 pull-l2">
+            <!-- Container Column-->
+            <div class="container-column">
+                <!-- Party -->
+                <div class="card medium-container z-depth-3">
+                    <div class="card-content black-text center-align">
+                        <p class="medium-container-text">Party</p>
+                    </div>
+                </div>
+                <!-- Party Pokemon -->
+                <div class="col s12">
+                    <!-- Set to l12 to make each Pokemon slot span full width of the container -->
+                    @for (int i = 0; i < 6; i++)
+                    {
+                        <div class="card pokemon-container z-depth-3" id="partypokemon">
+                            <img src="https://via.placeholder.com/40" class="party-img responsive-img" alt="Pokémon Image">
+                            <div>
+                                <!-- New container for name and level -->
+                                <p class="pokemon-name" style="font-weight: bold;">Pokemon Name</p>
+                                <p class="pokemon-level">Lv. --</p>
+                            </div>
                         </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Box Section -->
+        <div class="col s12 m4">
+            <div class="card transparent-card">
+                <div class="card-content black-text center-align">
+                    <h5>Box</h5>
+                    <div class="row">
+                        <!-- Box grid (6x5 grid) -->
+                        @for (int i = 0; i < 30; i++)
+                        {
+                            <div class="col s4" style="padding: 5px;">
+                                <div class="box-slot card-panel blue lighten-4" style="padding: 10px;">
+                                    <img src="https://via.placeholder.com/40" class="responsive-img" alt="Pokémon Image">
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pokémon Details Section -->
+        <div class="col s12 m4">
+            <div class="card transparent-card">
+                <div class="card-content black-text">
+                    <h5>Pokémon Details</h5>
+                    <p><strong>Name:</strong> Turtonator</p>
+                    <p><strong>Level:</strong> 50</p>
+                    <p><strong>Ability:</strong> Shell Armor</p>
+                    <p><strong>Item:</strong> None</p>
+                    <div>
+                        <h6>Stats</h6>
+                        <p><strong>HP:</strong> 123 / 123</p>
+                        <p><strong>Attack:</strong> 98</p>
+                        <p><strong>Defense:</strong> 120</p>
+                        <p><strong>Sp. Attack:</strong> 91</p>
+                        <p><strong>Sp. Defense:</strong> 85</p>
+                        <p><strong>Speed:</strong> 60</p>
+                    </div>
+                    <div>
+                        <h6>Moves</h6>
+                        <div class="move-slot red lighten-2" style="padding: 5px; margin: 3px;">Flamethrower</div>
+                        <div class="move-slot yellow lighten-2" style="padding: 5px; margin: 3px;">Protect</div>
+                        <div class="move-slot blue lighten-2" style="padding: 5px; margin: 3px;">Dragon Pulse</div>
+                        <div class="move-slot purple lighten-2" style="padding: 5px; margin: 3px;">Shell Trap</div>
                     </div>
                 </div>
             </div>
