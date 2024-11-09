@@ -153,4 +153,8 @@
             $scope.password = null; 
         }
     };
+
+
+    // Pokemon Information
+    
 });

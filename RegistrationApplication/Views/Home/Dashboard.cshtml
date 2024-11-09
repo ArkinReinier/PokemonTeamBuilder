@@ -1,23 +1,129 @@
 ﻿@{
-    Layout = "~/Views/Shared/_RegistrationLayout.cshtml";
+    Layout = "~/Views/Shared/_TeamBuilder.cshtml";
 }
 
-<!-- Background Video -->
-<video autoplay muted loop class="background-video">
-    <source src="~/Content/Media/Windrise.mp4" type="video/mp4">
-</video>
+@* Notes for back-end devs: Kindly change this filename to "TeamBuilder.cshtml" and reflect changes in the controller, service, etc. thanks :3 *@
 
-<div class="container">
-    <div class="row center-align">
-        <div class="col s12 m6 l4 offset-m3 offset-l4">
-            <div class="row">
-                <div class="col s12 m12 l12" style="margin-top: 75px">
-                    <div class="card white transparent-card">
-                        <div class="card-content black-text" style="padding-bottom: 50px;">
-                            <h3 style="margin-top: -20px;">Welcome to the Dashboard</h3>
-                            <p>You are successfully logged in.</p>
-                            <a href="/Home/RegistrationPage" class="waves-effect waves-light btn-small col s12 grey darken-4" style="margin-top: 15px"><b>Logout</b></a>
+<!-- Party Section -->
+<div class="row">
+    <!--Added custom background-->
+    <div class="col l3">
+        <!-- Container Column-->
+        <div class="container-column">
+            <!-- Party -->
+            <div class="card party-container z-depth-3">
+                <div class="card-content black-text center-align">
+                    <p class="medium-container-text">Party</p>
+                </div>
+            </div>
+            <!-- Party Pokemon -->
+            <div class="col l12">
+                <!-- Set to l12 to make each Pokemon slot span full width of the container -->
+                @for (int i = 0; i < 6; i++)
+                {
+                    <div class="card pokemon-container z-depth-3" id="partypokemon">
+                        <div style="min-width: 50px; min-height: 50px;">
+                            <img src="https://img.pokemondb.net/sprites/sword-shield/normal/gengar.png" class="party-img responsive-img" alt="Pokémon Image">
                         </div>
+                        <div>
+                            <!-- New container for name and level -->
+                            <p class="pokemon-name" style="font-weight: bold;">Pokemon Name</p>
+                            <p class="pokemon-level">Lv. --</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Generation Header Section -->
+    <div class="col l5" style="display: flex; flex-direction: column; align-items: center;">
+        <!-- Generation Card -->
+        <div class="card medium-container z-depth-3">
+            <div class="card-content black-text center-align" style="display: flex; justify-content: center; align-items: center;">
+                <!-- Left Arrow Icon -->
+                <i class="material-icons" style="cursor: pointer; margin-right: 90px;">chevron_left</i>
+                <p class="medium-container-text" style="display: inline-block; margin: 0;">Generation</p>
+                <!-- Right Arrow Icon -->
+                <i class="material-icons" style="cursor: pointer; margin-left: 90px;">chevron_right</i>
+            </div>
+        </div>
+
+        <!-- Box Grid Container -->
+        <div class="box-grid row">
+            @for (int i = 0; i < 386; i++)
+            {
+                <div class="col l2" style="padding: 5px;">
+                    <div class="box-slot card-panel z-depth-2" style="padding: 10px; min-width: 50px; min-height: 50px;">
+                        <div><img src="https://img.pokemondb.net/sprites/sword-shield/normal/gengar.png" class="responsive-img" alt="Pokémon Image"></div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+
+    <!-- Pokémon Details Section -->
+    <div class="col l4">
+        <div class="pokemon-detail-card z-depth-5 col l12">
+            <div class="card-content black-text center-align">
+                <!-- Added Heading for Pokémon Card -->
+                <div class="poke-info">
+                    <!-- Ultra Ball Image -->
+                    <img src="https://www.serebii.net/itemdex/sprites/sv/ultraball.png" alt="Ultra Ball" class="poke-ball">
+
+                    <!-- Pokémon Name and Level -->
+                    <div class="poke-name-container">
+                        <h5 class="poke-name">Gengar</h5>
+                        <h5 class="poke-level">Lv. 50</h5>
+                    </div>
+                </div>
+                <div id="card" class="z-depth-3">
+                    <!-- Pokemon type and sprite Here -->
+                    <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/gengar.gif" alt="Gengar" />
+
+                    <div class="types">
+                        <span class="type-ghost">Ghost</span>
+                        <span class="type-poison">Poison</span>
+                    </div>
+
+                    <!-- Base Stats Section -->
+                    <div class="base-stats">
+                        <h5>Base Stats</h5>
+                        <table class="centered striped highlight">
+                            <thead>
+                                <tr>
+                                    <th>Stat</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>HP</td>
+                                    <td>60</td>
+                                </tr>
+                                <tr>
+                                    <td>Attack</td>
+                                    <td>65</td>
+                                </tr>
+                                <tr>
+                                    <td>Defense</td>
+                                    <td>60</td>
+                                </tr>
+                                <tr>
+                                    <td>Special Attack</td>
+                                    <td>130</td>
+                                </tr>
+                                <tr>
+                                    <td>Special Defense</td>
+                                    <td>75</td>
+                                </tr>
+                                <tr>
+                                    <td>Speed</td>
+                                    <td>110</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
