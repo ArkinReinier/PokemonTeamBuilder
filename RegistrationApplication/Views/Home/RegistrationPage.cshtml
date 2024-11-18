@@ -1,4 +1,4 @@
-﻿@{
+@{
     Layout = "~/Views/Shared/_RegistrationLayout.cshtml";
 }
 
@@ -29,6 +29,13 @@
                                             <input id="fName" type="text" class="username-input" placeholder="Username" ng-model="firstName" name="firstName" data-length="50" maxlength="50" required>
                                         </div>
                                         <span class="helper-text" ng-show="RegistrationPage.firstName.$touched && RegistrationPage.firstName.$invalid">This field is required</span>
+                                    <div class="input-field col s12">
+
+                                        <i class="material-icons prefix">account_circle</i>
+
+                                  <input id="username" type="text" class="validate" ng-model="username" name="username" data-length="20" maxlength="20" required>
+                                        <label for="username">Username</label>
+                                        <span class="helper-text" ng-show="RegistrationPage.username.$touched && RegistrationPage.username.$invalid">This field is required</span>
                                     </div>
 
                                     <!-- Email -->
@@ -46,13 +53,20 @@
                                         </div>
                                         <span class="helper-text" ng-show="RegistrationPage.userPassword.$touched && RegistrationPage.userPassword.$invalid">This field is required</span>
                                     </div>
-
                                     <!-- Confirm Password -->
                                     <div class="input-field col s12" id="confirm-password-field">
                                         <div class="input-wrapper password-wrapper">
                                             <input id="uPConfirm" type="{{isPasswordVisible ? 'text' : 'password'}}" class="password-input" placeholder="Confirm Password" ng-model="userConfirm" name="userConfirm" required>
                                         </div>
                                         <span class="helper-text" ng-show="RegistrationPage.userConfirm.$touched && RegistrationPage.userConfirm.$invalid">This field is required</span>
+                                    <div class="input-field col s12" style="position: relative;">
+                                        <i class="material-icons prefix">lock</i>
+                                        <input id="uPConfirm" type="{{isPasswordVisible ? 'text' : 'password'}}"
+                                               class="validate" ng-model="userConfirm" name="userConfirm" required>
+                                        <label for="uPConfirm">Confirm Password</label>
+                                        <span class="helper-text" ng-show="RegistrationPage.userConfirm.$touched && RegistrationPage.userConfirm.$invalid">
+                                            This field is required
+                                        </span>
                                     </div>
                                 </div>
 
@@ -87,3 +101,4 @@
         </div>
     </div>
 </div>
+</body>
