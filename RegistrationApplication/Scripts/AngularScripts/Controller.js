@@ -138,4 +138,8 @@ app.controller("RegistrationApplicationController", function ($scope, Registrati
             $scope.password = null; 
         }
     };
+
+
+    // Pokemon Information
+    
 });
