@@ -150,6 +150,9 @@
     <Content Include="Content\Media\Ghost.png" />
     <Content Include="Content\Media\Poison.png" />
     <Content Include="Content\Media\pokemon_logo.png" />
+    <Content Include="Content\Media\ProfilePage.png" />
+    <Content Include="Content\Media\RedDefault.png" />
+    <Content Include="Content\Media\TrainerRed.jpeg" />
     <Content Include="Content\Media\Windrise.mp4" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -984,10 +987,11 @@
     <Content Include="Views\Shared\_RegistrationLayout.cshtml" />
     <Content Include="Views\Home\RegistrationPage.cshtml" />
     <Content Include="Views\Home\LoginPage.cshtml" />
-    <Content Include="Views\Home\Dashboard.cshtml" />
+    <Content Include="Views\Home\TeamBuilder.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_TeamBuilder.cshtml" />
-    <Content Include="Views\Home\Profile.cshtml" />
+    <Content Include="Views\Home\ProfilePage.cshtml" />
+    <Content Include="Views\Shared\_ProfilePageLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

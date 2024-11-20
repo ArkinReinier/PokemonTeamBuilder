@@ -1,13 +1,8 @@
 ﻿app.controller("RegistrationApplicationController", function ($scope, RegistrationApplicationService) {
 
-    /* // Lambda query => ASearch means pwede iaccess yung key ng array
-        var userSearch = userCredentials.find(ASearch => ASearch.FirstName === $scope.firstName && ASearch.LastName === $scope.lastName);
-
-        if (userSearch == undefined) { */
-    // Function to handle the registration process: validate inputs, store data, and redirect
     $scope.getInputData = function () {
         // Check if all required fields are filled
-        if (!$scope.firstName || !$scope.lastName || !$scope.userEmail || !$scope.userPassword || !$scope.userConfirm || !$scope.userAddress || !$scope.userPhone) {
+        if (!$scope.userEmail || !$scope.userPassword || !$scope.userConfirm || !$scope.username) {
             Swal.fire({
                 icon: 'error',
                 title: 'Missing Information',
@@ -23,11 +18,11 @@
                 text: 'Password is too short!'
             });
             return;
-        } else if (!/^(?=.*[.!£$%^&*()\-_=+#~@[\]{}|\\/]).{6,}$/.test($scope.userPassword)) {
+        } else if (!/^(?=.*[0-9])(?=.*[.!£$%^&*()\-_=+#~@[\]{}|\\/]).{6,}$/.test($scope.userPassword)) {
             Swal.fire({
                 icon: 'error',
                 title: 'No special characters',
-                text: 'Password must have special characters!'
+                text: 'Password must contain a number and a special character!'
             });
             return;
         }
@@ -42,31 +37,18 @@
             return;
         }
 
-        /*$scope.getUserDepartment = function () {
-        var getData = RegistrationApplicationITEService.getDepartment();
-        getData.then(function (ReturnedData) {
-            var uDepartment = ReturnedData.data;
-            alert(uDepartment);
-        });
-    } */
-
         // Check if the user already exists in local storage
         var storedUsers = JSON.parse(sessionStorage.getItem('userCredentials')) || [];
         var userSearch = storedUsers.find(user =>
-            user.UserName === ($scope.firstName.toLowerCase() + $scope.lastName.toLowerCase())
+            user.UserName === ($scope.username)
         );
 
         if (!userSearch) {
             // Create user object with username in lowercase format
             var newUser = {
-                FirstName: $scope.firstName,
-                MiddleName: $scope.middleName,
-                LastName: $scope.lastName,
                 UserEmail: $scope.userEmail,
                 UserPassword: $scope.userPassword,
-                UserAddress: $scope.userAddress,
-                UserPhone: $scope.userPhone,
-                UserName: $scope.firstName.toLowerCase() + $scope.lastName.toLowerCase(), // Username is firstName + lastName in lowercase
+                UserName: $scope.username,
                 Password: $scope.userPassword // Password is whatever the user entered
             };
 
@@ -79,15 +61,15 @@
             Swal.fire({
                 position: "center",
                 icon: "success",
-                title: "Access Granted!",
-                html: "Redirecting in <b></b> milliseconds...",
+                title: "Registration Complete!",
+                html: "Redirecting in <b></b> seconds",
                 timer: 2000,
                 timerProgressBar: true,
                 didOpen: () => {
                     Swal.showLoading();
                     const timer = Swal.getPopup().querySelector("b");
                     timerInterval = setInterval(() => {
-                        timer.textContent = `${Swal.getTimerLeft()}`;
+                        timer.textContent = Math.ceil(Swal.getTimerLeft() / 1000);
                     }, 100);
                 },
                 willClose: () => {
@@ -109,7 +91,7 @@
     // Function that clears out all the input fields on forms
     $scope.cancelFunc = function () {
         $scope.firstName = null;
-        $scope.middleName = null;
+        $scope.username = null;
         $scope.lastName = null;
         $scope.userEmail = null;
         $scope.userPassword = null;
@@ -121,7 +103,6 @@
     };
 
 
-
     // After registration
     $scope.initAlert = function () {
         Swal.fire("Registration Success!");
@@ -129,7 +110,7 @@
 
     // Login function to validate user credentials and redirect to the dashboard if successful
     $scope.login = function () {
-        var username = $scope.username.toLowerCase(); 
+        var username = $scope.username.toLowerCase();
         var password = $scope.password;
 
         // Retrieve users from local storage
@@ -149,12 +130,12 @@
                 title: 'Invalid Login',
                 text: 'Incorrect username or password.'
             });
-            $scope.username = null; 
-            $scope.password = null; 
+            $scope.username = null;
+            $scope.password = null;
         }
     };
 
 
     // Pokemon Information
-    
+
 });

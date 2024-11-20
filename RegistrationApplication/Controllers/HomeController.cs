@@ -37,14 +37,16 @@ namespace RegistrationApplication.Controllers
             return View();
         }
 
-        public ActionResult Dashboard() //Added this one to open the dashboard 
+        public ActionResult TeamBuilder() //Added this one to open the dashboard 
         {
             return View(); 
         }
-        public ActionResult Profile()
+        public ActionResult ProfilePage()
         {
             return View();
         }
+
+
 
 
     }
