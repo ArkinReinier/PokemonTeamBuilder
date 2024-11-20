@@ -1,4 +1,4 @@
-﻿app.controller("RegistrationApplicationController", function ($scope, RegistrationApplicationService) {
+app.controller("RegistrationApplicationController", function ($scope, RegistrationApplicationService) {
 
     $scope.getInputData = function () {
         // Check if all required fields are filled
