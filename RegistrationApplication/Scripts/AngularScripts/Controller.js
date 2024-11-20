@@ -48,7 +48,7 @@ app.controller("RegistrationApplicationController", function ($scope, Registrati
             var newUser = {
                 UserEmail: $scope.userEmail,
                 UserPassword: $scope.userPassword,
-                UserName: $scope.username, 
+                UserName: $scope.username,
                 Password: $scope.userPassword // Password is whatever the user entered
             };
 
@@ -110,7 +110,7 @@ app.controller("RegistrationApplicationController", function ($scope, Registrati
 
     // Login function to validate user credentials and redirect to the dashboard if successful
     $scope.login = function () {
-        var username = $scope.username.toLowerCase(); 
+        var username = $scope.username.toLowerCase();
         var password = $scope.password;
 
         // Retrieve users from local storage
@@ -130,12 +130,17 @@ app.controller("RegistrationApplicationController", function ($scope, Registrati
                 title: 'Invalid Login',
                 text: 'Incorrect username or password.'
             });
-            $scope.username = null; 
-            $scope.password = null; 
+            $scope.username = null;
+            $scope.password = null;
         }
     };
 
 
     // Pokemon Information
+
+
+});
+
   
 });
+
