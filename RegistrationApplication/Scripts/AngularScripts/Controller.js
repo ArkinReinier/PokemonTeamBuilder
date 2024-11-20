@@ -1,8 +1,5 @@
 app.controller("RegistrationApplicationController", function ($scope, RegistrationApplicationService) {
 
-    $scope.togglePasswordVisibility = function () {
-        $scope.isPasswordVisible = !$scope.isPasswordVisible; // Toggle visibility
-    };
     $scope.getInputData = function () {
         // Check if all required fields are filled
         if (!$scope.userEmail || !$scope.userPassword || !$scope.userConfirm || !$scope.username) {
@@ -94,7 +91,7 @@ app.controller("RegistrationApplicationController", function ($scope, Registrati
     // Function that clears out all the input fields on forms
     $scope.cancelFunc = function () {
         $scope.firstName = null;
-        $scope.middleName = null;
+        $scope.username = null;
         $scope.lastName = null;
         $scope.userEmail = null;
         $scope.userPassword = null;
@@ -104,7 +101,6 @@ app.controller("RegistrationApplicationController", function ($scope, Registrati
         $scope.username = null;
         $scope.password = null;
     };
-
 
 
     // After registration
@@ -141,5 +137,5 @@ app.controller("RegistrationApplicationController", function ($scope, Registrati
 
 
     // Pokemon Information
-    
+  
 });
