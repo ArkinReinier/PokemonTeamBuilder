@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="~/Content/materialize.min.css" />
+    <script src="~/Scripts/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Pokemon Team Builder</title>
+    <style>
+
+
+
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .card {
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .transparent-card {
+            background-color: rgba(255, 255, 255, 0.8); /* Add opacity to the background color */
+            border-radius: 15px;
+            padding: 20px;
+            max-height: calc(100vh - 150px);
+            overflow: hidden; /* Prevent content from spilling out */
+        }
+
+        .fontcancel {
+            color: #d8c47f !important;
+        }
+
+        /* Everything after this is already used for Pokemon*/
+
+        @@font-face {
+            font-family: 'Flexo-Regular';
+            src: url('/Content/Fonts/Flexo-Regular.ttf');
+        }
+
+        @@font-face {
+            font-family: 'Flexo-Bold';
+            src: url('/Content/Fonts/Flexo-Bold.ttf');
+        }
+
+        @@font-face {
+            font-family: 'Flexo-Heavy';
+            src: url('/Content/Fonts/Flexo-Heavy.ttf');
+        }
+
+        @@font-face {
+            font-family: 'Flexo-Medium';
+            src: url('/Content/Fonts/Flexo-Medium.ttf');
+        }
+
+        h2 {
+            font-family: 'Flexo-Heavy', sans-serif;
+            color: #212529;
+        }
+
+
+        /* Not sure if fontfaces work yet*/
+
+        /* Font family for input labels and text */
+
+
+        .input-field {
+            margin-top: -5px; /* Adjust the value as needed */
+        }
+
+            .input-field input[type="text"],
+            .input-field input[type="password"],
+            .input-field input[type="email"],
+            .input-field label {
+                font-family: 'Flexo-Regular', sans-serif; /* Custom font for Pokémon feel */
+                color: #FFFFFF;
+            }
+
+            .input-field input[type="text"],
+            .input-field input[type="password"],
+            .input-field input[type="email"] {
+                padding-left: 11px; /* Adjust padding for icon alignment */
+            }
+
+
+        #loginbtn,
+        #submitbtn {
+            font-family: 'Flexo-Bold', sans-serif;
+            background-color: #4dad5b !important; /* Green login button */
+            color: #FFFFFF !important;
+            border-radius: 0.3rem;
+        }
+
+
+
+        #cancelbtn {
+            font-family: 'Flexo-Bold', sans-serif;
+            background-color: #333 !important; /* Dark color for cancel */
+            color: #FFFFFF !important;
+            border-radius: 0.3rem;
+        }
+
+        .fontcancel {
+            color: #d8c47f !important;
+            font-weight: bold;
+        }
+
+        body, html {
+            height: 100%;
+        }
+
+        body {
+            background-image: url("/Content/Media/ProfilePage.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            height: 100%;
+        }
+
+        /* Input texboxes */
+
+        /* Container for both input fields */
+        .input-wrapper {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        .username-input,
+        .password-input,
+        .email-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 16px;
+        }
+
+            .username-input::placeholder,
+            .password-input::placeholder,
+            .email-input::placeholder {
+                color: #aaa;
+            }
+
+        .visibility-toggle {
+            cursor: pointer;
+            color: #aaa;
+            margin-left: 8px;
+        }
+
+            .visibility-toggle:hover {
+                color: #fff;
+            }
+
+        /* Remove the underline from Materialize input fields */
+        input[type="text"]:not(.browser-default),
+        input[type="password"]:not(.browser-default),
+        input[type="email"]:not(.browser-default) {
+            border-bottom: none !important;
+            box-shadow: none !important;
+            width: 100%; /* Ensures input fields fill the container width */
+            padding: 5px 10px; /* Adjust padding to match the first image */
+            margin: 1px 0; /* Space out each input field */
+            box-sizing: border-box; /* Include padding in the total width */
+        }
+
+        /* Remove the focus effect (green line)
+        input[type="text"]:focus:not(.browser-default),
+        input[type="password"]:focus:not(.browser-default) {
+            border-bottom: none !important;
+            box-shadow: none !important;
+
+        }
+
+        /* Optionally remove focus outline
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none !important;
+        }
+        */
+
+        .copyright {
+            font-size: 10px;
+            color: #4e4e4e;
+            font-family: "Flexo-Regular", serif;
+            text-align: center;
+            white-space: pre-line;
+            margin: 2px;
+        }
+
+        .input-field
+        .helper-text {
+            position: relative;
+            min-height: 18px;
+            margin-right: 12px;
+            display: block;
+            font-size: 14px;
+            color: #dc3545;
+        }
+        /* Team Builder Styles*/
+
+        .party-slot, .box-slot {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border-radius: 15px;
+            margin: 1px;
+            text-align: center;
+        }
+
+        .box-slot {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f5f5f5; /* Light background for visibility */
+            padding: 10px;
+            border-radius: 10px;
+            aspect-ratio: 1; /* Ensures the box is square */
+            width: 100%; /* Ensures responsiveness */
+            max-width: 80px; /* Adjust this value to control the size */
+        }
+
+            .box-slot img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain; /* Keeps the image aspect ratio */
+                border-radius: 5px;
+            }
+
+        .pokemon-name,
+        .pokemon-level {
+            font-family: 'Flexo-Regular', sans-serif;
+            color: #333;
+            margin: 0;
+        }
+
+        .move-slot {
+            font-family: 'Flexo-Regular', sans-serif;
+            padding: 5px;
+            margin: 4px 0;
+            text-align: center;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .card.transparent-card {
+            max-height: calc(100vh - 150px);
+            z-index: auto;
+        }
+
+        .box-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-height: 550px;
+            overflow-y: auto;
+        }
+
+        .pokemon-detail-card {
+            margin-top: 25px;
+            background-color: rgba(255, 255, 255);
+            padding: 20px;
+            max-height: calc(100vh - 150px);
+            overflow: auto; /* Prevent content from spilling out */
+        }
+
+        .medium-container, .pokemon-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 150px;
+            height: 7vh; /* Adjusted height to match container purpose */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .party-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 150px;
+            height: 7vh; /* Adjusted height to match container purpose */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 25px;
+            width: 95%; /* Set width to 100% to be responsive */
+            margin-bottom: 25px;
+        }
+
+        .pokemon-container {
+            display: flex;
+            flex-direction: row; /* Align image and text in a row */
+            align-items: center; /* Center the image and text vertically */
+            height: 12vh; /* Maintain the taller height for individual slots */
+            margin-top: -5px; /* Adjust spacing as needed */
+            width: 100%; /* Set width to 60 to match reference image */
+        }
+
+        .party-img {
+            height: auto;
+            max-height: 80px; /* Set a max-height to control the size */
+            object-fit: contain; /* Ensure the image maintains its aspect ratio */
+            margin-right: 50px; /* Adjust spacing if necessary */
+        }
+
+        .medium-container {
+            width: 93%; /* Set width to 100% to be responsive */
+            max-width: 400px; /* Ensure they share the same maximum width */
+            margin-bottom: 25px;
+        }
+
+        .container-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center both containers horizontally */
+        }
+
+        .pokemon-slot {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 40px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .medium-container-text {
+            font-family: 'Flexo-Bold', sans-serif;
+            font-size: 25px;
+            color: #333;
+            margin: 0;
+        }
+
+        /*Pokemon Profile*/
+
+        header, main, footer {
+            padding-left: 300px;
+        }
+
+        @@media only screen and (max-width: 992px) {
+            header, main, footer {
+                padding-left: 0;
+            }
+        }
+
+        /* Offset content for the fixed sidenav */
+        .content-wrapper {
+            padding-left: 300px;
+        }
+
+        /* Reset padding on smaller screens */
+        @@media only screen and (max-width: 992px) {
+            .content-wrapper {
+                padding-left: 0;
+            }
+        }
+
+        .white-text {
+            font-family: Flexo-Regular;
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-family: Flexo-Heavy;
+        }
+
+        /* Style for the "design-only" input box */
+        .input-box {
+            margin-top: 10px;
+        }
+
+        .input-field-design {
+            background-color: #f5f5f5; /* Light gray background */
+            padding: 8px 12px; /* Smaller padding */
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px; /* Smaller font size */
+            color: #333;
+            max-width: 250px; /* Limit max width */
+            margin: 0 auto; /* Center the box */
+        }
+
+            .input-field-design p {
+                margin: 0;
+            }
+
+            .input-field-design span {
+                font-weight: bold;
+            }
+
+            .input-field-design a {
+                font-size: 16px;
+                color: #333;
+            }
+    </style>
+    <title>@ViewBag.Title</title>
+</head>
+<body ng-app="RegistrationApplication" ng-controller="RegistrationApplicationController">
+    <div>
+        @RenderBody()
+    </div>
+    <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/AngularScripts/Module.js"></script>
+    <script src="~/Scripts/AngularScripts/Service.js"></script>
+    <script src="~/Scripts/AngularScripts/Controller.js"></script>
+</body>
+</html>
