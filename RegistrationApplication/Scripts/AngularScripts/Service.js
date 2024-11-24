@@ -1,4 +1,6 @@
 ﻿app.service("RegistrationApplicationService", function ($http) {
+
+
  /*
     // Post registration data
     this.postData = function (registrationData) {
@@ -32,4 +34,20 @@
         });
         return response;
     };*/
+
+    this.postData = function (registrationData) {
+        return $http({
+            method: "POST",
+            url: "/HomeController/postData", // points to the AddData action dbInput.cs
+            data: registrationData
+        });
+    };
+    this.addData = function (registrationData) {
+        return $http({
+            method: "POST",
+            url: "/HomeController/AddData", // points to the AddData action dbInput.cs
+            data: registrationData
+        });
+    };
+
 });
