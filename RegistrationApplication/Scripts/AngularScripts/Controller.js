@@ -2,7 +2,7 @@ app.controller("RegistrationApplicationController", function ($scope, Registrati
 
     $scope.getInputData = function ()
         {
-            // Check if all required fields are filled
+            /*// Check if all required fields are filled
             if (!$scope.userEmail || !$scope.userPassword || !$scope.userConfirm || !$scope.username) {
                 Swal.fire({
                     icon: 'error',
@@ -35,24 +35,24 @@ app.controller("RegistrationApplicationController", function ($scope, Registrati
                     text: 'Passwords do not match!'
                 });
                 return;
-            }
+            }*/
 
             // set data to chuchu to connect to backend
-            const registrationData = {
+            var registrationData = {
                 usernameInput: $scope.username,
                 userEmailInput: $scope.userEmail,
                 userPasswordInput: $scope.userPassword
             };
-            RegistrationApplicationService.postData(registrationData).then(function (response) {
-                if (response.data.success) {
-                    alert(response.data.success);
+
+            var saveData = RegistrationApplicationService.postData(registrationData);
+            saveData.then(function (ReturnedData) {
+                if (ReturnedData.data.success) {
+                    alert(ReturnedData.data.message);  // Success message from the controller
                 } else {
-                    alert("Error: " + response.data.message);
+                    alert("Error: " + ReturnedData.data.message);  // Error message from the controller
                 }
-            }).catch(function (error) {
-                console.error("Error while sending data:", error);
-            });
-      
+            })
+
             
 
         };
