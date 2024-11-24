@@ -144,12 +144,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\dbInput.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\passwordHasher.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\tbl_usersMap.cs" />
-    <Compile Include="Models\tbl_usersContext.cs" />
+    <Compile Include="Models\db_poketrainerContext.cs" />
     <Compile Include="Models\RegistrationModel.cs" />
     <Compile Include="Models\tbl_usersModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

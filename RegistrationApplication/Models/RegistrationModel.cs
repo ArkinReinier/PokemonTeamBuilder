@@ -37,4 +37,10 @@ namespace RegistrationApplication.Models
        public string Username { get; set; }
        public string Password { get; set; }
    } */
+    public class RegistrationModel
+    {
+        public string usernameInput { get; set; }
+        public string userEmailInput { get; set; }
+        public string userPasswordInput { get; set; }
+    }
 }

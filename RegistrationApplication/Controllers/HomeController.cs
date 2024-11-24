@@ -46,8 +46,29 @@ namespace RegistrationApplication.Controllers
             return View();
         }
 
+        public JsonResult PostData(RegistrationModel registrationData)
+        {
+            var username = registrationData.usernameInput;
+            var email = registrationData.userEmailInput;
+            var password = registrationData.userPasswordInput;
 
+            var rData = new RegistrationModel()
+            {
+                userEmailInput = email,
+                userPasswordInput = password,
+                usernameInput = username
+            };
+            return Json(rData, JsonRequestBehavior.AllowGet);
 
+        }
+
+        public void AddData(RegistrationModel registrationData)
+        {
+            using (var db = new db_poketrainterContext())
+            {
+              //  db.AddData(registrationData);
+            }
+        }
 
     }
 }
