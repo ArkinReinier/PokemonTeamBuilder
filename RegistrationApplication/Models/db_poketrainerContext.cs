@@ -15,7 +15,7 @@ namespace RegistrationApplication.Models
             Database.SetInitializer<db_poketrainerContext>(null);
         }
         public db_poketrainerContext() : base("Name=db_poketrainer") { }
-
+         
         public virtual DbSet<tbl_usersModel> tbl_users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

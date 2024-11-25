@@ -1,6 +1,7 @@
 ﻿using RegistrationApplication.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -46,28 +47,42 @@ namespace RegistrationApplication.Controllers
             return View();
         }
 
-        public JsonResult PostData(RegistrationModel registrationData)
-        {
-            var username = registrationData.usernameInput;
-            var email = registrationData.userEmailInput;
-            var password = registrationData.userPasswordInput;
+        /*        public JsonResult PostData(RegistrationModel registrationData)
+                {
+                    var username = registrationData.usernameInput;
+                    var email = registrationData.userEmailInput;
+                    var password = registrationData.userPasswordInput;
 
-            var rData = new RegistrationModel()
-            {
-                userEmailInput = email,
-                userPasswordInput = password,
-                usernameInput = username
-            };
-            return Json(rData, JsonRequestBehavior.AllowGet);
+                    var rData = new RegistrationModel()
+                    {
+                        userEmailInput = email,
+                        userPasswordInput = password,
+                        usernameInput = username
+                    };
+                    return Json(rData, JsonRequestBehavior.AllowGet);
 
-        }
+                }
+        */
+        [HttpPost]
 
         public void AddData(RegistrationModel registrationData)
-        {
-            using (var db = new db_poketrainterContext())
+        {   
+
+            using (var db = new db_poketrainerContext())
             {
-              //  db.AddData(registrationData);
+                var trainerData = new tbl_usersModel
+                {
+                    createdAt = DateTime.Now,
+                    username = registrationData.usernameInput,
+                    email = registrationData.userEmailInput,
+                    uPassword = registrationData.userPasswordInput
+                    
+                };
+                db.tbl_users.AddOrUpdate(trainerData);
+                db.SaveChanges();
             }
+           
+
         }
 
     }
