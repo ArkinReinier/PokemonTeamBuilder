@@ -15,5 +15,5 @@
             data: registrationData
         });
     };
-
+    // kung andito to edi updated dapat
 });
