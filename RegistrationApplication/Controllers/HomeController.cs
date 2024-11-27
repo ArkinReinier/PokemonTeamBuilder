@@ -45,7 +45,10 @@ namespace RegistrationApplication.Controllers
         {
             return View();
         }
-
+        public ActionResult ForumPage()
+        {
+            return View();
+        }
 
 
 

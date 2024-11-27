@@ -1,0 +1,76 @@
+﻿﻿@{
+    Layout = "~/Views/Shared/_ForumPageLayout.cshtml";
+}
+
+<nav class="nav-wrapper grey darken-4"">
+        <a href="#" class="brand-logo right">Logo</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">JavaScript</a></li>
+        </ul>
+</nav>
+
+<ul id="slide-out" class="sidenav sidenav-fixed grey darken-4">
+    <!-- Header -->
+    <li>
+        <div class="user-view">
+            <div class="background red darken-4">
+                <!-- Optional image or background -->
+            </div>
+            <a><img class="circle responsive-img" src="@Url.Content("~/Content/Media/RedDefault.png")"></a>
+            <p class="white-text profile-name">Trainer Red</p>
+            <p class="white-text email">ilovegengar@gmail.com</span></p>
+        </div>
+    </li>
+
+    <!-- Communities Section -->
+    <li><a class="subheader white-text">Communities</a></li>
+    <li><a href="#!" class="white-text"> General</a></li>
+    <li><a href="#!" class="white-text"> Pokémon Red & Blue</a></li>
+    <li><a href="#!" class="white-text"> Generation 2</a></li>
+    <li><a href="#!" class="white-text"> Pokémon Emerald</a></li>
+
+    <div class="divider"></div>
+
+</ul>
+
+
+<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+<div class="content-wrapper">
+    <div class="container">
+        @for (int i = 0; i < 7; i++)
+        {
+            <div class="col s12 m7">
+                <div class="card horizontal">
+                    <!-- Username moved inside the card -->
+                    <div class="card-stacked">
+                        <h4 class="header" style="padding: 16px 20px 0; margin: 0;">Username</h4> <!-- Padding for spacing -->
+                        <div class="card-content">
+                            <p>I play Pokémon Go everyday</p>
+                        </div>
+                        <!-- Footer for comments and shares -->
+                        <div class="card-action">
+                            <!-- Comments -->
+                            <a href="#" class="grey-text text-darken-2" style="display: flex; align-items: center;">
+                                <i class="material-icons" style="margin-right: 5px;">chat_bubble_outline</i>
+                                15 Comments
+                            </a>
+                            <!-- Shares -->
+                            <a href="#" class="grey-text text-darken-2" style="display: flex; align-items: center;">
+                                <i class="material-icons" style="margin-right: 5px;">share</i>
+                                8 Shares
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Image outside of stacked content to keep layout -->
+                    <div class="card-image">
+                        <img src="https://img.pokemondb.net/sprites/sword-shield/normal/gengar.png" alt="Pokemon Image">
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

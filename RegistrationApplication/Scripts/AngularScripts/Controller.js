@@ -136,11 +136,11 @@ app.controller("RegistrationApplicationController", function ($scope, Registrati
     };
 
 
-    // Pokemon Information
+    // Pokemon Forum 
+
 
 
 });
 
   
-});
 

@@ -375,8 +375,10 @@
         }
 
         .profile-name {
-            font-size: 24px;
+            font-size: 20px;
             font-family: Flexo-Heavy;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
 
         /* Style for the "design-only" input box */
@@ -409,6 +411,58 @@
                 font-size: 16px;
                 color: #333;
             }
+
+        /* Overlapping of navbar on sidebar & Forum Page CSS*/
+
+        nav.nav-wrapper {
+            position: fixed; /* Ensure it stays fixed at the top */
+            z-index: 1000; /* Higher z-index so it overlays the sidenav */
+            width: 100%; /* Full width */
+            top: 0;
+            left: 0;
+        }
+
+        .sidenav.sidenav-fixed {
+            margin-top: 45px; /* Adjust according to navbar height, usually around 64px */
+            z-index: 999; /* Ensure it's below the navbar */
+        }
+
+        .sidenav-fixed {
+            background-color: #212121; /* Dark background */
+            padding-top: 20px; /* Padding for the top */
+            height: 100vh; /* Full height */
+            color: white;
+        }
+
+        .sidenav .subheader {
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding-left: 16px;
+        }
+
+        .sidenav li a {
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidenav li i {
+            margin-right: 15px; /* Icon spacing */
+        }
+
+        .divider {
+            background-color: #444; /* Divider color */
+        }
+
+        :root {
+            --navbar-height: 64px; /* Navbar heighe defined */
+        }
+
+        .content-wrapper {
+            margin-top: var(--navbar-height);
+        }
+
+
     </style>
     <title>@ViewBag.Title</title>
 </head>

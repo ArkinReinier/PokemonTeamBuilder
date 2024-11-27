@@ -1019,6 +1019,8 @@
     <Content Include="Views\Shared\_TeamBuilder.cshtml" />
     <Content Include="Views\Home\ProfilePage.cshtml" />
     <Content Include="Views\Shared\_ProfilePageLayout.cshtml" />
+    <Content Include="Views\Home\ForumPage.cshtml" />
+    <Content Include="Views\Shared\_ForumPageLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
