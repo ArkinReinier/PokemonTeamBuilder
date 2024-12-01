@@ -1,14 +1,14 @@
-﻿﻿@{
+﻿@{
     Layout = "~/Views/Shared/_ForumPageLayout.cshtml";
 }
 
-<nav class="nav-wrapper grey darken-4"">
-        <a href="#" class="brand-logo right">Logo</a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">JavaScript</a></li>
-        </ul>
+<nav class="nav-wrapper grey darken-4">
+    <a href="#" class="brand-logo right">Logo</a>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">JavaScript</a></li>
+    </ul>
 </nav>
 
 <ul id="slide-out" class="sidenav sidenav-fixed grey darken-4">
@@ -20,7 +20,7 @@
             </div>
             <a><img class="circle responsive-img" src="@Url.Content("~/Content/Media/RedDefault.png")"></a>
             <p class="white-text profile-name">Trainer Red</p>
-            <p class="white-text email">ilovegengar@gmail.com</span></p>
+            <p class="white-text email">ilovegengar@gmail.com</p>
         </div>
     </li>
 
@@ -32,45 +32,53 @@
     <li><a href="#!" class="white-text"> Pokémon Emerald</a></li>
 
     <div class="divider"></div>
-
 </ul>
 
-
+<!-- Post Part -->
 <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
 <div class="content-wrapper">
     <div class="container">
-        @for (int i = 0; i < 7; i++)
-        {
-            <div class="col s12 m7">
-                <div class="card horizontal">
-                    <!-- Username moved inside the card -->
-                    <div class="card-stacked">
-                        <h4 class="header" style="padding: 16px 20px 0; margin: 0;">Username</h4> <!-- Padding for spacing -->
-                        <div class="card-content">
-                            <p>I play Pokémon Go everyday</p>
-                        </div>
-                        <!-- Footer for comments and shares -->
-                        <div class="card-action">
-                            <!-- Comments -->
-                            <a href="#" class="grey-text text-darken-2" style="display: flex; align-items: center;">
-                                <i class="material-icons" style="margin-right: 5px;">chat_bubble_outline</i>
-                                15 Comments
-                            </a>
-                            <!-- Shares -->
-                            <a href="#" class="grey-text text-darken-2" style="display: flex; align-items: center;">
-                                <i class="material-icons" style="margin-right: 5px;">share</i>
-                                8 Shares
-                            </a>
-                        </div>
+        <table style="width: 100%; border-spacing: 0;">
+            <tr style="background-color: #fff; border: 1px solid #ddd;">
+                <td class="post-username" style="vertical-align: top; width: 70%; padding: 16px;">
+                    <!-- Username -->
+                    <h4 class="post-title">Username</h4>
+                    <!-- Content -->
+                    <p class="post-content">I play Pokémon Go everyday</p>
+                    <!-- Footer -->
+                    <div class="post-footer" style="margin-top: 10px;">
+                        <!-- Comments -->
+                        <a href="#" class="post-comment-link">
+                            <i class="material-icons post-icon">chat_bubble_outline</i>
+                            15 Comments
+                        </a>
+                        <!-- Shares -->
+                        <a href="#" class="post-share-link">
+                            <i class="material-icons post-icon">share</i>
+                            8 Shares
+                        </a>
                     </div>
-                    <!-- Image outside of stacked content to keep layout -->
-                    <div class="card-image">
-                        <img src="https://img.pokemondb.net/sprites/sword-shield/normal/gengar.png" alt="Pokemon Image">
-                    </div>
-                </div>
+                </td>
+                <td class="post-image" style="vertical-align: top; width: 30%; padding: 16px; text-align: center;">
+                    <!-- Image -->
+                    <img src="https://img.pokemondb.net/sprites/sword-shield/normal/gengar.png" alt="Pokemon Image" class="post-image-img">
+                </td>
+            </tr>
+        </table>
+
+        <!-- Comment Part -->
+        <div class="comment-section">
+            <!-- Comment Header -->
+            <div class="comment-header">
+                <h4 class="comment-username">Username</h4>
+                <p class="comment-replied">replied to <b>Ash Ketchum</b></p>
             </div>
-        }
+
+            <!-- Comment Content -->
+            <div class="comment-content">
+                <p class="comment-text">Hey Viktor nation. How we feeling?</p>
+            </div>
+        </div>
     </div>
 </div>
-
