@@ -1,35 +1,19 @@
 ﻿app.service("RegistrationApplicationService", function ($http) {
- /*
-    // Post registration data
+
+
     this.postData = function (registrationData) {
-        var response = $http({
-            method: "post",
-            url: "/Home/PostData",
-            data: registrationData //where data acquired is passed
+        return $http({
+            method: "POST",
+            url: "/Home/postData", // points to the AddData action dbInput.cs
+            data: registrationData
         });
-        return response;
     };
-
-    // User login
-    this.loginUser = function (loginData) {
-        var response = $http({
-            method: "post",
-            url: "/Home/Login",
-            data: loginData 
+    this.addData = function (registrationData) {
+        return $http({
+            method: "POST",
+            url: "/Home/AddData", // points to the AddData action dbInput.cs
+            data: registrationData
         });
-        return response;
     };
-
-    // for the login page validation
-    this.validateUserData = function (fName, lName) {
-        var response = $http({
-            method: "post",
-            url: "/Home/ValidateUser",
-            params: {
-                FirstName: fName,
-                LastName: lName
-            }
-        });
-        return response;
-    };*/
+    // kung andito to edi updated dapat
 });

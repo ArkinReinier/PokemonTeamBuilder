@@ -15,11 +15,26 @@ namespace RegistrationApplication
 
             routes.MapMvcAttributeRoutes(); // Enable attribute routing if needed
 
+            // Default route configuration
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "RegistrationPage", id = UrlParameter.Optional }
             );
+
+
+/*            routes.MapRoute(
+                name: "DbInput",
+                url: "HomeController/AddData",
+                defaults: new { controller = "HomeController", action = "AddData" }
+            );
+*//*            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+*/            
+
         }
     }
 }

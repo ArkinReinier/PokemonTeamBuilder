@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_ProfilePageLayout.cshtml";
 }
 
-<ul id="slide-out" class="sidenav sidenav-fixed grey darken-4">
+<div id="slide-out" class="sidenav sidenav-fixed grey darken-4">
 
 
     <!-- Profile Picture -->
@@ -40,8 +40,9 @@
     </div>
 
     <!-- Sidebar Links -->
+    <ul>
     <li><a href="#!" class="white-text">Home Page</a></li>
-    <li><a href="~/TeamBuilder.cshtml" class="white-text">Team Builder</a></li>
+    <li><a href="~/Home/TeamBuilder" class="white-text">Team Builder</a></li>
     <li><a href="#!" class="white-text">Forum Page</a></li>
     <li>
         <a href="#!" class="red-text" style="display: flex; align-items: center; justify-content: flex-start;">
@@ -50,6 +51,8 @@
         </a>
     </li>
 </ul>
+    </ul>
+</div>
 <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
 <div class="content-wrapper">
@@ -79,6 +82,8 @@
                         </div>
                     </div>
                     <!-- Image outside of stacked content to keep layout -->
+                <h2 class="header">Username</h2>
+                <div class="card horizontal">
                     <div class="card-image">
                         <img src="https://img.pokemondb.net/sprites/sword-shield/normal/gengar.png" alt="Pokemon Image">
                     </div>
@@ -87,4 +92,3 @@
         }
     </div>
 </div>
-
