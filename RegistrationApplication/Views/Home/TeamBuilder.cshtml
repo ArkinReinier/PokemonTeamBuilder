@@ -19,18 +19,22 @@
             <!-- Party Pokemon -->
             <div class="col l12">
                 <!-- Set to l12 to make each Pokemon slot span full width of the container -->
+                <!-- Back-end, you can remove this for loop and do your magic -->
                 @for (int i = 0; i < 6; i++)
                 {
-                    <div class="card pokemon-container z-depth-3" id="partypokemon">
-                        <div style="min-width: 50px; min-height: 50px;">
-                            <img src="https://img.pokemondb.net/sprites/sword-shield/normal/gengar.png" class="party-img responsive-img" alt="Pokémon Image">
-                        </div>
-                        <div>
-                            <!-- New container for name and level -->
-                            <p class="pokemon-name" style="font-weight: bold;">Pokemon Name</p>
-                            <p class="pokemon-level">Lv. --</p>
-                        </div>
-                    </div>
+                    <table class="card pokemon-container z-depth-3" id="partypokemon" style="border-spacing: 0;">
+                        <tr>
+                            <td style="min-width: 50px; min-height: 50px;">
+                                <img src="https://img.pokemondb.net/sprites/sword-shield/normal/gengar.png" class="party-img responsive-img" alt="Pokémon Image">
+                            </td>
+                            <td>
+                                <!-- New container for name and level -->
+                                <p class="pokemon-name" style="font-weight: bold;">Pokemon Name</p>
+                                <p class="pokemon-level">Lv. --</p>
+                            </td>
+                        </tr>
+                    </table>
+
                 }
             </div>
         </div>
@@ -50,14 +54,19 @@
         </div>
 
         <!-- Box Grid Container -->
+        <!-- Do the same here, back-end -->
         <div class="box-grid row">
             @for (int i = 0; i < 386; i++)
             {
-                <div class="col l2" style="padding: 5px;">
-                    <div class="box-slot card-panel z-depth-2" style="padding: 10px; min-width: 50px; min-height: 50px;">
-                        <div><img src="https://img.pokemondb.net/sprites/sword-shield/normal/gengar.png" class="responsive-img" alt="Pokémon Image"></div>
-                    </div>
-                </div>
+                <table class="col l2" style="padding: 5px;">
+                    <tr>
+                        <td style="padding: 10px; min-width: 50px; min-height: 50px;">
+                            <div class="box-slot card-panel z-depth-2">
+                                <img src="https://img.pokemondb.net/sprites/sword-shield/normal/gengar.png" class="responsive-img" alt="Pokémon Image">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             }
         </div>
     </div>

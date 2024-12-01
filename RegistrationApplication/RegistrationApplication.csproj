@@ -176,6 +176,7 @@
     <Content Include="Content\materialize.css" />
     <Content Include="Content\materialize.min.css" />
     <Content Include="Content\Media\builderbg.png" />
+    <Content Include="Content\Media\ForumPage.png" />
     <Content Include="Content\Media\Ghost.png" />
     <Content Include="Content\Media\Poison.png" />
     <Content Include="Content\Media\pokemon_logo.png" />
