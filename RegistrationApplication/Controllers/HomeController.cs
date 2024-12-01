@@ -47,6 +47,12 @@ namespace RegistrationApplication.Controllers
             return View();
         }
 
+        public ActionResult ForumPage()
+        {
+            return View();
+        }
+
+
         /*        public JsonResult PostData(RegistrationModel registrationData)
                 {
                     var username = registrationData.usernameInput;

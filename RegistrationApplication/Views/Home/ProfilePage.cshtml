@@ -9,7 +9,7 @@
     <!-- Profile Picture -->
     <div class="center-align" style="margin-top: 10px; margin-bottom: 20px;">
         <div class="center-align" style="margin-top: 9px;">
-            <img src="~/Content/Media/pokemon_logo.png" alt="Pokémon Logo" class="responsive-img" style="max-height: 80px;">
+            <img src="~/Content/Media/pokemon_logo.png" alt="Pokémon Logo" class="circle responsive-img" style="max-height: 80px;">
         </div>
         <img src="~/Content/Media/RedDefault.png" alt="Profile Picture" class="circle responsive-img" style="max-width: 100px;">
         <p class="white-text profile-name">Trainer Red</p>
@@ -50,6 +50,7 @@
             <i class="material-icons red-text" style="margin-left: 8px;">exit_to_app</i>
         </a>
     </li>
+</ul>
     </ul>
 </div>
 <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -59,16 +60,14 @@
         @for (int i = 0; i < 7; i++)
         {
             <div class="col s12 m7">
-                <h2 class="header">Username</h2>
                 <div class="card horizontal">
-                    <div class="card-image">
-                        <img src="https://img.pokemondb.net/sprites/sword-shield/normal/gengar.png" alt="Pokemon Image">
-                    </div>
+                    <!-- Username moved inside the card -->
                     <div class="card-stacked">
+                        <h2 class="header" style="padding: 16px 20px 0; margin: 0;">Username</h2> <!-- Padding for spacing -->
                         <div class="card-content">
                             <p>I play Pokémon Go everyday</p>
                         </div>
-                        <!-- Add footer for comments and shares -->
+                        <!-- Footer for comments and shares -->
                         <div class="card-action">
                             <!-- Comments -->
                             <a href="#" class="grey-text text-darken-2" style="display: flex; align-items: center;">
@@ -81,6 +80,12 @@
                                 8 Shares
                             </a>
                         </div>
+                    </div>
+                    <!-- Image outside of stacked content to keep layout -->
+                <h2 class="header">Username</h2>
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="https://img.pokemondb.net/sprites/sword-shield/normal/gengar.png" alt="Pokemon Image">
                     </div>
                 </div>
             </div>

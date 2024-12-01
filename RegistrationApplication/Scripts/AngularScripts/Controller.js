@@ -78,8 +78,8 @@ app.controller("RegistrationApplicationController", function ($scope, Registrati
     $scope.initAlert = function () {
         Swal.fire("Registration Success!");
     };
+});
 
 
   
-});
 
